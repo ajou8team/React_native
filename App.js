@@ -37,7 +37,7 @@ export default class App extends React.Component{
         <CounterButton counter = {2}/>
         <CounterButton counter = {3}/> */}
         <Text style={styles.text}>1</Text>
-        <Text style={styles.text}>2</Text>
+        <Text style={[styles.text, styles.text2]}>2</Text>
         <Text style={styles.text}>3</Text>
       </View>
     );
@@ -51,13 +51,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
   },
 
   text: {
     flex: 1,
     borderWidth: 1,
     borderColor: 'red',
+
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+
+  text2: {
+    flex: 2,
   }
   // buttonContainer:{
   //   width: '100%',
