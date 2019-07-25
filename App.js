@@ -82,7 +82,7 @@ export default class App extends React.Component {
 
   renderItem({ name }) {
     return (
-        <View style={styles.item}>
+        <View style={styles.item} key={name}>
           <Text style={styles.text}>{name}</Text>
         </View>
     );
@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     marginTop: Constants.statusBarHeight,
   },
+
   item: {
     flex: 1,
     height: 50,
