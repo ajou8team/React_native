@@ -35,10 +35,11 @@ export default class App extends React.Component{
         <CounterButton count ={1} />
         <CounterButton counter = {1}/>
         <CounterButton counter = {2}/>
-        <CounterButton counter = {3}/> */}
+        <CounterButton counter = {3}/>
         <Text style={styles.text}>1</Text>
         <Text style={[styles.text, styles.text2]}>2</Text>
-        <Text style={styles.text}>3</Text>
+        <Text style={styles.text}>3</Text> */}
+        <Image source={{uri: "https://facebook.github.io/react-native/img/favicon.png", width: 64, }}/>
       </View>
     );
   }
@@ -50,24 +51,26 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     
-    justifyContent: 'center',
-    alignItems: 'stretch',
-  },
-
-  text: {
-    flex: 1,
-    borderWidth: 1,
     borderColor: 'red',
-
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    fontSize: 24,
-    fontWeight: 'bold',
+    borderWidth: 2,
+    // justifyContent: 'center',
+    // alignItems: 'stretch',
   },
 
-  text2: {
-    flex: 2,
-  }
+  // text: {
+  //   flex: 1,
+  //   borderWidth: 1,
+  //   borderColor: 'red',
+
+  //   textAlign: 'center',
+  //   textAlignVertical: 'center',
+  //   fontSize: 24,
+  //   fontWeight: 'bold',
+  // },
+
+  // text2: {
+  //   flex: 2,
+  // }
   // buttonContainer:{
   //   width: '100%',
   // },
