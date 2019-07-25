@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Button, Text, View } from 'react-native';
+import { Constants } from 'expo';
 
 // class CounterButton extends React.Component {
 //   static defaultProps ={
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    marginTop: Constants.statusBarHeight,
     
     borderColor: 'red',
     borderWidth: 2,
