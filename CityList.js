@@ -2,7 +2,11 @@ import React from 'react';
 import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Constants } from 'expo';
 
-export default class App extends React.Component {
+export default class CityList extends React.Component {
+  static navigationOptions = {
+    title: 'Cities',
+  };
+
   constructor(props) {
     super(props);
 
@@ -13,35 +17,39 @@ export default class App extends React.Component {
 
   componentDidMount() {
     fetch('http://demo6468405.mockable.io/weather-crawlers/cities')
-        .then(response => response.json())
-        .then(cities => {
-          console.log('cities =', cities.length);
-          this.setState({
-            cities
-          });
+      .then(response => response.json())
+      .then(cities => {
+        console.log('cities =', cities.length);
+        this.setState({
+          cities
         });
+      });
   }
 
-  onPressCity(item){
-  console.log('onPressCity =',item);
+  onPressCity(item) {
+        this.props.navigation.navigate(
+          'Detail',
+          {
+            city: item
+          }
+        );
   }
-
 
   renderItem(city) {
     return (
-        <TouchableOpacity style={styles.item} onPress={() => this.onPressCity(city)}>
-          <Text style={styles.text}>{city}</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.item} onPress={() => this.onPressCity(city)}>
+        <Text style={styles.text}>{city}</Text>
+      </TouchableOpacity>
     );
   }
 
   render() {
     return (
-        <FlatList style={styles.container}
-                  renderItem={({ item }) => this.renderItem(item)}
-                  keyExtractor={item => item}
-                  data={this.state.cities}
-        />
+      <FlatList style={styles.container}
+                renderItem={({ item }) => this.renderItem(item)}
+                keyExtractor={item => item}
+                data={this.state.cities}
+      />
     );
   }
 }
