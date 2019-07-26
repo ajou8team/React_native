@@ -16,7 +16,7 @@ export default class CityList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://demo6468405.mockable.io/weather-crawlers/cities')
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=cities')
       .then(response => response.json())
       .then(cities => {
         console.log('cities =', cities.length);
